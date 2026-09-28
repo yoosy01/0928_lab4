@@ -24,6 +24,12 @@ namespace YooSeoyoung2693186
             }
         }
     public:
+    dayOfYear(int m =1, int d=1)
+    : month{m}, day{d}
+    {
+        testDay();
+        testMonth();
+    }
         void input()
         {
             std::cout<<"Enter the month as a number: ";
@@ -33,7 +39,7 @@ namespace YooSeoyoung2693186
         }
         void setMonth(int newMonth){month=newMonth; testMonth();}
         void setDay(int newDay){day=newDay; testDay();}
-        void print()
+        void print() const
         {
             switch(month)
             {
@@ -52,11 +58,11 @@ namespace YooSeoyoung2693186
             } 
             std::cout << day << "\n";
         }
-        int getMonth(){return month;}
-        int getDay(){return day;}
-    };//정의
+        int getMonth() const {return month;}
+        int getDay() const {return day;}
+    };
 
-}//영역지정
+}
 
 // 1. 본인이름학번의 네임스페이스
 // -본인이름학번 네임스페이스 예: 이름이 김프로이고 학번이 1234567일 경우 KimPro1234567
